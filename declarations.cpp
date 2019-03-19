@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <vector>
 #include <string>
 
@@ -28,6 +29,7 @@ int main()
 		cout << x << endl;
 
 	Date dt, *ptr;
+	
 	ptr = &dt;
 	dt.d = 21;
 	dt.m = 7;
@@ -36,8 +38,17 @@ int main()
 	int k = day(ptr);
 	cout << "Day is : " << k << endl;
 	cout << "Month is: " << ptr -> m << endl;
+	cout << "Day is: " << ptr->d << endl;
 	cout << "Year is: " << ptr -> y << endl;
 	
+	auto array1 = make_unique<double []>(5);
+	for (int i=0; i < 5; i++)
+		array1[i] = 3.1415;
+
+	for(int i=0; i < 5; i++)
+		cout << array1[i]  << endl;
+
+
 	int n = -3;
 
 	cout << abs(n) << endl; 
